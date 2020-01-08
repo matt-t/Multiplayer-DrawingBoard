@@ -1,11 +1,8 @@
-var express = require('express');
+const io = require("socket.io")(3000)
 
-var app = express();
-var server = app.listen(3000);
+io.on("connection", socket => {
+    console.log("nEW User")
+})
 
-app.use(express.static('public'));
 
-console.log("Server is running");
-
-var socket = require('socket.io');
 
